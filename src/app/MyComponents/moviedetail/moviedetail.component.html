@@ -1,0 +1,81 @@
+<div class="container">
+    <div class="row">
+      <h3 class="col-sm-8 ml-auto">movieDetail Details</h3>
+      </div>
+      <div class="card" *ngFor ="let record of movieDetail">
+        <div class="row">
+          <div class="col-sm-8">
+            <dl class="row m-1">
+              <dt class="col-sm-3"><Title></Title></dt>
+              <dd class="col-sm-9"><td>{{record.title}}</td></dd>
+              <dt class="col-sm-3">Year</dt>
+              <dd class="col-sm-9">{{record.year}}</dd>
+              <dt class="col-sm-3">Rated</dt>
+              <dd class="col-sm-9">{{record.rated}}</dd>
+              <dt class="col-sm-3">Released</dt>
+              <dd class="col-sm-9">{{record.released}}</dd>
+              <dt class="col-sm-3">Run Time</dt>
+              <dd class="col-sm-9">{{record.runtime}}</dd>
+              <dt class="col-sm-3">Genre</dt>
+              <dd class="col-sm-9">{{record.genre}}</dd>
+              <dt class="col-sm-3">Diector</dt>
+              <dd class="col-sm-9">{{record.director}}</dd>
+              <dt class="col-sm-3">Writer</dt>
+              <dd class="col-sm-9">{{record.writer}}</dd>
+              <dt class="col-sm-3">Actor</dt>
+              <dd class="col-sm-9">{{record.actors}}</dd>
+              <dt class="col-sm-3">Plot</dt>
+              <dd class="col-sm-9">{{record.plot}}</dd>
+              <dt class="col-sm-3">Language</dt>
+              <dd class="col-sm-9">{{record.language}}</dd>
+              <dt class="col-sm-3">Country</dt>
+              <dd class="col-sm-9">{{record.country}}</dd>
+              <dt class="col-sm-3">Awards</dt>
+              <dd class="col-sm-9">{{record.awards}}</dd>
+              <dt class="col-sm-3">Meta Score</dt>
+              <dd class="col-sm-9">{{record.metascore}}</dd>
+              <dt class="col-sm-3">IMDB Rating</dt>
+              <dd class="col-sm-9">{{record.imdbRating}}</dd>
+              <dt class="col-sm-3">IMDB Votes</dt>
+              <dd class="col-sm-9">{{record.imdbVotes}}</dd>
+              <dt class="col-sm-3">ImDBID</dt>
+              <dd class="col-sm-9">{{record.imdbID}}</dd>
+              <dt class="col-sm-3">Type</dt>
+              <dd class="col-sm-9">{{record.type}}</dd>
+              <dt class="col-sm-3">Total Season</dt>
+              <dd class="col-sm-9">{{record.totalSeasons}}</dd>
+              <dt  class="col-sm-3">Ratings</dt>
+              <div *ngFor ="let record2 of record.ratings; let firstCondition = first">
+                <dl>
+                <dd>{{ firstCondition?record2.name:'' }}</dd>
+                <dt>source</dt>
+              <dd  class="col-sm-9">{{firstCondition?record2.type: ''}}</dd>
+              
+              <dd  class="col-sm-9">{{record2.source}}</dd>
+              <dt>value</dt>
+              <dd  class="col-sm-9">{{record2.value}}</dd>
+            </dl>
+            </div>
+              <!-- <dt class="col-sm-9"></dt> 
+               <dd class="col-sm-3"><a [routerLink]="['/home/allocatedevice/'+ record.id]" ><span> <fa-icon icon="pencil"></fa-icon></span></a>
+          </dd>  -->
+            </dl>
+          </div>
+          
+          
+        </div>
+        
+      </div>
+      </div>
+    <div>
+    
+       
+    </div>
+    
+    <td> 
+
+
+        
+
+
+        
