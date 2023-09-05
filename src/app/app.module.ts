@@ -15,11 +15,17 @@ import { AppService } from './app.service';
 import { MatInputModule } from "@angular/material/input";
 import { MatFormFieldModule } from '@angular/material/form-field';
 
+import {MatButtonModule} from '@angular/material/button';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { ImageDialogComponent } from './MyComponents/image-dialog/image-dialog.component';
+import { MatDialogModule } from '@angular/material/dialog';
+
 @NgModule({
   declarations: [
     AppComponent,
     MovieComponent,
-    MoviedetailComponent
+    MoviedetailComponent,
+    ImageDialogComponent 
     
   ],
   imports: [
@@ -31,6 +37,9 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     FormsModule,
     MatInputModule,
     MatFormFieldModule,
+    MatButtonModule,
+    MatProgressSpinnerModule,
+    MatDialogModule
   ],
   providers: [AppService],
   bootstrap: [AppComponent]

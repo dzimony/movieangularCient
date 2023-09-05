@@ -1,36 +1,28 @@
 <div class="container-fluid">
 
-
   <div class="row">     
     <div class="col-sm-4 ml-auto mr-auto"> 
            
-     
- 
+      
       <mat-form-field class="ml-2" appearance="fill">
-
-        
-       <input 
+       
+                 <input 
                       matInput
                       placeholder="movieTitle"
                       [(ngModel)]="movieTitle"
                     /> 
+                    
                   </mat-form-field>
+                  <button mat-raised-button color="success" (click)="SearchMovie()"> Search</button> 
+ 
     </div>
-
+    
 </div>
 
-
-
-<div class="row">
   
 
-  <div class="col-sm-4 mr-auto ml-auto">
-    
-     <button mat-raised-button color="success" (click)="SearchMovie()"> Search</button> 
-   
 
-  </div>
-</div>
+
       <div class="row">
           <div class="col-sm-12" >
             
@@ -46,7 +38,7 @@
                              <th scope="col">ImDbId</th>
                              <th scope="col">Type</th>
                              <th scope="col">Poster</th>
-                             <th>Action</th>
+                             <th>Detail</th>
                            </tr>
                          </thead>
 
@@ -63,7 +55,7 @@
 
                              <td>{{record.type}}</td>
                              
-                             <td> <img [src]=" record.poster" alt="profile picture" style="width:50px; height:50px;"></td>
+                             <td> <img [src]=" record.poster" alt="profile picture" style="width:50px; height:50px;" (click)="openDialog(record.poster)"></td>
 
 
                              
@@ -76,21 +68,20 @@
                            </tr>
                          </tbody>
                       </table> 
-  
+                       <div class="text-center alert-warning" *ngIf="nosearchValue">The Movie was not found</div> 
                       
           </div>
   
           </div>
       
       </div>
-      <!-- <div class="row">
+       <div class="row">
         <div class="col-sm-6 mr-auto ml-auto">
         <mat-spinner *ngIf="spinner === true" mode="indeterminate" [strokeWidth]="2" [diameter]="52" color="primary"></mat-spinner> 
       </div> 
-      </div>-->
+      </div>
   </div>
   
   
   
   
-<router-outlet></router-outlet>

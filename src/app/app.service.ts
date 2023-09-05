@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpContext, HttpErrorResponse, HttpHeaders, HttpParams } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Observable, catchError, throwError } from 'rxjs';
 
 @Injectable({
@@ -7,6 +7,8 @@ import { Observable, catchError, throwError } from 'rxjs';
 })
 export class AppService {
   baseUrl = 'http://localhost:5252/api'
+
+  //baseUrl = 'https://movieapi.pited.ng/api'
 
   httpOptions = {
     headers: new HttpHeaders({
@@ -21,7 +23,7 @@ export class AppService {
   getMovies(movieTitle : string): Observable<any[]> {
     
    
-    return this.httpClient.get<any[]>(this.baseUrl + '/Movies?movieTitle=' + movieTitle)// { context: new HttpContext().set(BYPASS_LOG, true) })
+    return this.httpClient.get<any[]>(this.baseUrl + '/Movies?movieTitle=' + movieTitle)// Making http call})
       .pipe(catchError(this.handleError))
   }
 

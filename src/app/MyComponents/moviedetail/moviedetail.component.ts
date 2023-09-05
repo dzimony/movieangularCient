@@ -45,7 +45,7 @@ this.movieDetail.push(res)
 
 },
 error:(err) =>{
-//this.toaster.error('', err.error)
+alert('Error ,please ensure you have internet and try again')
 }
 })
 
